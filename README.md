@@ -5,6 +5,8 @@
 - 左边可交互的 3D 旋转体，右边是随输入实时变化的完整推导链。
 - 所有计算都在浏览器本地完成：无后端、无数据库、无 API Key、无网络请求。
 
+**在线演示**：<https://ss277353ss-source.github.io/solid-of-revolution/>
+
 ![3D 旋转体](docs/screenshot-3d.jpg)
 
 ## 目录
