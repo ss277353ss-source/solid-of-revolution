@@ -165,7 +165,7 @@ $$S(a,b)=\frac{b-a}{6}\Big[f(a)+4f\!\left(\tfrac{a+b}{2}\right)+f(b)\Big]$$
 需要 Node.js 18+（开发时使用 Node 24 / npm 11）。
 
 ```bash
-cd D:\solid-of-revolution
+cd solid-of-revolution
 npm install
 npm run dev
 ```
@@ -248,30 +248,6 @@ Test Files  6 passed (6)
 
 覆盖内容：Simpson 的收敛性与误差估计、`a > b` 与空区间、NaN 抛错、尖点函数；解析、求导、复数结果、未知变量、无参函数（`sin()`）拦截；与 x 轴 / y 轴围成面积（含负值取绝对值、端点导数发散、非单调分段累加）；圆盘 / 圆环判定、偏移轴、端点保护、微元切分；多项式与三角函数（含平方、线性内层、可展开平方）的解析解与"无法求解返回 null"；以及 `analyze` 的全部边界分支与三角函数数值。
 
-## 部署到 GitHub Pages
-
-仓库已经配置好 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)。
-
-1. 新建一个 GitHub 仓库，然后：
-
-   ```bash
-   cd D:\solid-of-revolution
-   git init
-   git add .
-   git commit -m "feat: 旋转体体积与表面积交互式教学工具"
-   git branch -M main
-   git remote add origin https://github.com/<你的用户名>/<仓库名>.git
-   git push -u origin main
-   ```
-
-2. 在仓库 **Settings → Pages → Build and deployment** 中把 Source 选为 **GitHub Actions**。
-3. 之后每次推送到 `main`，工作流会依次执行 `npm ci` → `npm run verify` → `npx vitest run` → `npm run build`，并把 `dist/` 发布到 Pages。
-
-`vite.config.ts` 里 `base: './'` 使用相对路径，因此项目站点部署在 `https://<用户名>.github.io/<仓库名>/` 子路径下也能正确加载资源。若部署到根域名，可用环境变量覆盖：
-
-```bash
-VITE_BASE=/ npm run build
-```
 
 ## 目录结构
 
